@@ -12,12 +12,12 @@ export function Header() {
       <div className="mx-auto flex h-[72px] max-w-[1280px] items-center justify-between px-4 sm:h-[99px] sm:pr-8 sm:pl-[46px] xl:pr-[110px]">
         <a href="#top" aria-label="Back to top" className="shrink-0">
           <Image
-            src="/assets/avatar.png"
+            src="/assets/panda-logo.png"
             alt=""
-            width={57}
-            height={60}
+            width={360}
+            height={360}
             loading="eager"
-            className="h-[46px] w-[44px] object-cover sm:h-[60px] sm:w-[57px]"
+            className="h-14 w-14 object-cover sm:h-20 sm:w-20"
           />
         </a>
         <nav aria-label="Primary">

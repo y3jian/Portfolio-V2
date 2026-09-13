@@ -75,7 +75,18 @@ export function Experience() {
             >
               <p className="mb-1 text-sm font-bold text-cream italic md:hidden">{role.dates}</p>
               <h3 className="font-display text-xl font-bold text-cream">{role.title}</h3>
-              <p className="text-sm font-light">{role.company}</p>
+              {role.companyUrl ? (
+                <a
+                  href={role.companyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-light underline decoration-cream/40 underline-offset-2 transition-colors hover:decoration-cream focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream"
+                >
+                  {role.company}
+                </a>
+              ) : (
+                <p className="text-sm font-light">{role.company}</p>
+              )}
               <p className="mt-[5px] text-sm font-light">{role.description}</p>
             </article>
           </li>

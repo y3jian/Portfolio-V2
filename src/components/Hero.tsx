@@ -7,6 +7,26 @@ const socials = [
   { href: profile.linkedin, label: "LinkedIn", icon: "/assets/linkedin.svg" },
 ];
 
+function AnimatedName({ name }: { name: string }) {
+  return (
+    <h1
+      aria-label={name}
+      className="font-display text-[length:clamp(3.25rem,10vw,6rem)] leading-[normal] font-bold text-brand"
+    >
+      {name.split("").map((char, i) => (
+        <span
+          key={i}
+          aria-hidden
+          className="inline-block animate-[fade-in_600ms_ease-out_both] transition-transform duration-200 ease-out hover:-translate-y-2 motion-reduce:animate-none motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+          style={{ animationDelay: `${i * 40}ms` }}
+        >
+          {char === " " ? " " : char}
+        </span>
+      ))}
+    </h1>
+  );
+}
+
 export function Hero() {
   return (
     <section id="top" className="overflow-hidden">
@@ -15,9 +35,7 @@ export function Hero() {
           <p className="font-display text-[length:clamp(1.75rem,4vw,2.5rem)] leading-[normal] font-bold">
             Hello, I&rsquo;m
           </p>
-          <h1 className="font-display text-[length:clamp(3.25rem,10vw,6rem)] leading-[normal] font-bold text-brand">
-            {profile.name}
-          </h1>
+          <AnimatedName name={profile.name} />
           <p className="mt-4 max-w-[538px] leading-[normal] font-light xl:mt-[29px]">
             {profile.tagline}
           </p>
